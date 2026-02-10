@@ -36,19 +36,27 @@ body {
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
-  background: #F8F9FA; 
+  background: #F8F9FA;
 }
+
 ::-webkit-scrollbar-thumb {
-  background: #E5E7EB; 
+  background: #E07A5F;
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background: #3D405B; 
+  background: #3D405B;
+}
+
+/* Text Selection Color */
+::selection {
+  color: #E07A5F;
 }
 
 @utility container {
   margin-inline: auto;
   padding-inline: 1rem;
-  max-width: 1280px; 
+  max-width: 1280px;
 }

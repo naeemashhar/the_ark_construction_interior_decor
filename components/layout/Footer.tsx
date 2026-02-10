@@ -5,7 +5,7 @@ export default function Footer() {
     return (
         <footer className="bg-primary text-white pt-24 pb-12 font-body relative overflow-hidden">
             {/* Background Pattern */}
-             {/* <div className="absolute inset-0 opacity-[0.01] pointer-events-none"
+            {/* <div className="absolute inset-0 opacity-[0.01] pointer-events-none"
                 style={{
                     backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)',
                     backgroundSize: '40px 40px'
@@ -16,10 +16,9 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-24 mb-24">
                     {/* Brand Section */}
                     <div className="md:col-span-5 lg:col-span-4">
-                        <Link href="/" className="inline-block mb-8 group">
-                            <span className="font-heading text-5xl font-bold tracking-tighter text-white group-hover:text-accent transition-colors duration-300">
-                                THE ARK
-                            </span>
+                        <Link href="/" className="mb-8 group flex flex-col items-start leading-none gap-1">
+                            <span className="text-xs font-bold uppercase tracking-[0.4em] text-white/50 group-hover:text-accent transition-colors duration-300">The</span>
+                            <span className="font-heading font-black text-6xl tracking-tighter text-white group-hover:text-accent transition-colors duration-300">ARK</span>
                         </Link>
                         <p className="text-gray-400 text-lg leading-relaxed mb-8 max-w-sm">
                             Merging brutalist integrity with modern sustainability. We create spaces that stand the test of time.
