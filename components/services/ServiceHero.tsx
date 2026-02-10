@@ -65,7 +65,7 @@ export default function ServiceHero() {
             </div>
 
             {/* Center Badge */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 bg-white text-primary w-16 h-16 md:w-24 md:h-24 rounded-full flex items-center justify-center font-heading font-bold text-xl md:text-2xl shadow-xl border-4 border-white/20 backdrop-blur-sm bg-clip-padding">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 bg-white text-primary w-16 h-16 md:w-24 md:h-24 rounded-full flex items-center justify-center font-heading font-bold text-xl md:text-2xl shadow-xl border-4 border-white/20 bg-clip-padding">
                 ARK
             </div>
 

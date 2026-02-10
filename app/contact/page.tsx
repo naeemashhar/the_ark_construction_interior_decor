@@ -31,18 +31,18 @@ export default function ContactPage() {
                             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 to-transparent p-8 flex flex-col md:flex-row justify-between items-end">
                                 <div>
                                     <h4 className="text-white font-heading font-bold mb-1">Headquarters</h4>
-                                    <p className="text-gray-400 text-sm">123 Concrete Avenue, NY</p>
+                                    <p className="text-gray-400 text-sm">Malegaon, Nashik</p>
                                 </div>
                                 <div className="text-right mt-4 md:mt-0">
-                                    <p className="text-white font-heading font-bold">+1 (555) 000-0000</p>
-                                    <p className="text-accent text-sm">hello@theark.com</p>
+                                    <p className="text-white font-heading font-bold">+91 9870000***</p>
+                                    <p className="text-accent text-sm">info@theark.com</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     {/* Right Column - Form */}
-                    <div className="bg-white/5 p-8 md:p-12 border border-white/10 backdrop-blur-sm rounded-sm">
+                    <div className="bg-white/5 p-8 md:p-12 border border-white/10 rounded-sm">
                         <ContactForm />
                     </div>
 

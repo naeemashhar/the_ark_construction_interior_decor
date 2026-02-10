@@ -12,7 +12,7 @@ export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const pathname = usePathname();
 
-    const isDarkHero = ["/services", "/services/construction", "/"].includes(pathname);
+    const isDarkPage = ["/", "/services", "/services/construction", "/contact"].includes(pathname);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -33,19 +33,32 @@ export default function Navbar() {
 
     const toggleMenu = () => setIsOpen(!isOpen);
 
-    const textColorClass = scrolled ? "text-secondary" : (isDarkHero ? "text-white/90" : "text-secondary");
-    const hoverColorClass = scrolled ? "hover:text-primary" : (isDarkHero ? "hover:text-white" : "hover:text-primary");
-    const logoColorClass = scrolled ? "text-primary" : (isDarkHero ? "text-white" : "text-primary");
+    // Dynamic Classes
+    const getNavClasses = () => {
+        if (scrolled) {
+            return isDarkPage
+                ? "py-4 bg-[#3D405B]/90 backdrop-blur-sm border-b border-white/10"
+                : "py-4 bg-white/90 backdrop-blur-sm border-b border-gray-200";
+        }
+        return "py-6 bg-transparent";
+    };
+
+    const getTextColor = () => {
+        if (scrolled) {
+            return isDarkPage ? "text-white" : "text-secondary";
+        }
+        return isDarkPage ? "text-white" : "text-secondary";
+    };
 
     return (
         <>
             <header
-                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "py-4 bg-canvas/80 backdrop-blur-md border-b border-gray-200" : "py-6 bg-transparent"
-                    }`}
+                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${getNavClasses()}`}
             >
                 <div className="container flex items-center justify-between">
-                    <Link href="/" className={`font-heading font-bold text-2xl tracking-tighter transition-colors ${logoColorClass}`}>
-                        THE ARK
+                    <Link href="/" className="group flex flex-col items-start leading-none gap-0.5">
+                        <span className={`text-[10px] font-bold uppercase tracking-[0.4em] transition-colors ${getTextColor()}`}>The</span>
+                        <span className={`font-heading font-black text-3xl tracking-tighter transition-colors ${getTextColor()}`}>ARK</span>
                     </Link>
 
                     {/* Desktop Nav */}
@@ -54,20 +67,20 @@ export default function Navbar() {
                             <Link
                                 key={link.title}
                                 href={link.href}
-                                className={`text-sm uppercase tracking-wide transition-colors font-body font-medium ${textColorClass} ${hoverColorClass}`}
+                                className={`text-sm uppercase tracking-wide transition-colors font-body font-medium hover:opacity-70 ${getTextColor()}`}
                             >
                                 {link.title}
                             </Link>
                         ))}
                         <Link href="/dashboard">
-                            <MagneticButton variant="primary">
-                                Client Login
+                            <MagneticButton className="border border-[#222433]" variant="primary">
+                                For Client 
                             </MagneticButton>
                         </Link>
                     </nav>
 
                     {/* Mobile Menu Button */}
-                    <button onClick={toggleMenu} className={`md:hidden p-2 transition-colors ${logoColorClass}`}>
+                    <button onClick={toggleMenu} className={`md:hidden p-2 transition-colors ${getTextColor()}`}>
                         {isOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
                 </div>
@@ -95,7 +108,7 @@ export default function Navbar() {
                         ))}
                         <div className="mt-8">
                             <MagneticButton onClick={toggleMenu}>
-                                Client Login
+                                For Client 
                             </MagneticButton>
                         </div>
                     </motion.div>
