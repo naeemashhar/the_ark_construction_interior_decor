@@ -13,8 +13,9 @@ export default function ServiceHero() {
     useEffect(() => {
         const ctx = gsap.context(() => {
             // Simple entrance animation
-            gsap.from(leftRef.current, { xPercent: -100, duration: 1.5, ease: "power4.out" });
-            gsap.from(rightRef.current, { xPercent: 100, duration: 1.5, ease: "power4.out" }, "<");
+            const tl = gsap.timeline();
+            tl.from(leftRef.current, { xPercent: -100, duration: 1.5, ease: "power4.out" })
+                .from(rightRef.current, { xPercent: 100, duration: 1.5, ease: "power4.out" }, "<");
         }, containerRef);
 
         return () => ctx.revert();

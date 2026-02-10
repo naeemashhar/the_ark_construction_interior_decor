@@ -119,9 +119,12 @@ export default function ConstructionDetail() {
                     </div>
                     <div className="w-full md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6">
                         {data.features.map((feature) => (
-                            <div key={feature} className="flex items-center gap-4 border-b border-zinc-900/20 pb-4">
-                                <CheckCircle2 size={24} className="text-zinc-900" />
-                                <span className="text-xl font-medium">{feature}</span>
+                            <div key={feature.title} className="flex items-start gap-4 border-b border-zinc-900/20 pb-4">
+                                <CheckCircle2 size={24} className="text-zinc-900 mt-1 shrink-0" />
+                                <div>
+                                    <h4 className="text-xl font-medium mb-1">{feature.title}</h4>
+                                    <p className="text-sm text-gray-600 leading-relaxed">{feature.detail}</p>
+                                </div>
                             </div>
                         ))}
                     </div>
