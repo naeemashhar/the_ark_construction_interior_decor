@@ -12,7 +12,12 @@ export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const pathname = usePathname();
 
-    const isDarkPage = ["/", "/services", "/services/construction", "/contact"].includes(pathname);
+    const isDarkPage =
+        pathname === "/" ||
+        pathname.startsWith("/services") ||
+        pathname === "/contact" ||
+        pathname === "/privacy" ||
+        pathname === "/terms";
 
     useEffect(() => {
         const handleScroll = () => {
@@ -37,10 +42,13 @@ export default function Navbar() {
     const getNavClasses = () => {
         if (scrolled) {
             return isDarkPage
-                ? "py-4 bg-[#3D405B]/90 backdrop-blur-sm border-b border-white/10"
-                : "py-4 bg-white/90 backdrop-blur-sm border-b border-gray-200";
+                ? "py-4 bg-[#3D405B]/90  border-b border-white/10 shadow-lg"
+                : "py-4 bg-white/90  border-b border-gray-200 shadow-sm";
         }
-        return "py-6 bg-transparent";
+        // Gradient overlay for better text visibility on hero images
+        return isDarkPage
+            ? "py-6 bg-gradient-to-b from-black/60 to-transparent"
+            : "py-6 bg-transparent";
     };
 
     const getTextColor = () => {
@@ -74,7 +82,7 @@ export default function Navbar() {
                         ))}
                         <Link href="/dashboard">
                             <MagneticButton className="border border-[#222433]" variant="primary">
-                                For Client 
+                                For Client
                             </MagneticButton>
                         </Link>
                     </nav>
@@ -108,7 +116,7 @@ export default function Navbar() {
                         ))}
                         <div className="mt-8">
                             <MagneticButton onClick={toggleMenu}>
-                                For Client 
+                                For Client
                             </MagneticButton>
                         </div>
                     </motion.div>

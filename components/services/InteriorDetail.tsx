@@ -127,18 +127,19 @@ export default function InteriorDetail() {
             <section ref={targetRef} className="relative h-[300vh] bg-stone-900 text-white">
                 <div className="sticky top-0 h-screen flex items-center overflow-hidden">
                     <motion.div style={{ x }} className="flex gap-16 px-16">
-                        {data.gallery.map((img, i) => (
-                            <div key={i} className="relative h-[70vh] w-[50vw] md:w-[35vw] shrink-0">
+                        {data.gallery.map((project, i) => (
+                            <Link href={`/projects/${project.id}`} key={project.id} className="relative h-[70vh] w-[50vw] md:w-[35vw] shrink-0 block">
                                 <Image
-                                    src={img}
-                                    alt="Interior Gallery"
+                                    src={project.image}
+                                    alt={project.title}
                                     fill
                                     className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
                                 />
-                                <div className="absolute -bottom-12 left-0 text-3xl font-serif italic">
-                                    Residence 0{i + 1}
+                                <div className="absolute -bottom-16 left-0">
+                                    <p className="text-3xl font-serif italic mb-1">{project.title}</p>
+                                    <p className="text-sm font-light uppercase tracking-widest opacity-60">{project.category}</p>
                                 </div>
-                            </div>
+                            </Link>
                         ))}
                         {/* Extra space */}
                         <div className="w-[20vw] shrink-0 flex items-center justify-center">

@@ -86,26 +86,28 @@ export default function ConstructionDetail() {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {data.gallery.map((img, i) => (
-                            <motion.div
-                                key={i}
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 0.8 }}
-                                className="aspect-[3/4] relative group bg-zinc-900 border border-white/10 p-2"
-                            >
-                                <div className="relative w-full h-full overflow-hidden">
-                                    <Image
-                                        src={img}
-                                        alt="Project"
-                                        fill
-                                        className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 hover:scale-110"
-                                    />
-                                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                                        <span className="text-accent font-mono text-xs uppercase">Project {i + 1}</span>
+                        {data.gallery.map((project, i) => (
+                            <Link href={`/projects/${project.id}`} key={project.id} className="block">
+                                <motion.div
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    transition={{ duration: 0.8 }}
+                                    className="aspect-[3/4] relative group bg-zinc-900 border border-white/10 p-2 overflow-hidden"
+                                >
+                                    <div className="relative w-full h-full overflow-hidden">
+                                        <Image
+                                            src={project.image}
+                                            alt={project.title}
+                                            fill
+                                            className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 hover:scale-110"
+                                        />
+                                        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 to-transparent p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500 flex flex-col justify-end">
+                                            <span className="text-accent font-mono text-xs uppercase mb-2">{project.category}</span>
+                                            <h4 className="text-white text-lg font-bold">{project.title}</h4>
+                                        </div>
                                     </div>
-                                </div>
-                            </motion.div>
+                                </motion.div>
+                            </Link>
                         ))}
                     </div>
                 </div>
