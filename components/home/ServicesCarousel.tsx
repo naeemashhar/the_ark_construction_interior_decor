@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -87,9 +88,9 @@ export default function ServicesCarousel() {
                             <p className="text-gray-300 font-body text-sm mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                                 {service.description}
                             </p>
-                            <button className="flex items-center gap-2 text-white text-sm font-medium uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
+                            <Link href={`/services/${service.title.toLowerCase()}`} className="flex items-center gap-2 text-white text-sm font-medium uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200 hover:text-accent">
                                 View Projects <ArrowRight size={16} />
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 ))}

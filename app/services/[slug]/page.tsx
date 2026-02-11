@@ -1,7 +1,6 @@
 import { servicesData } from "@/lib/servicesData";
 import { notFound } from "next/navigation";
-import ConstructionDetail from "@/components/services/ConstructionDetail";
-import InteriorDetail from "@/components/services/InteriorDetail";
+import ServiceDetailTemplate from "@/components/services/ServiceDetailTemplate";
 
 // Ensure static generation knows about the paths
 export async function generateStaticParams() {
@@ -20,14 +19,5 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
         notFound();
     }
 
-    // Render distinct layout based on slug
-    if (slug === "construction") {
-        return <ConstructionDetail />;
-    }
-
-    if (slug === "interior") {
-        return <InteriorDetail />;
-    }
-
-    return notFound();
+    return <ServiceDetailTemplate data={service} />;
 }
