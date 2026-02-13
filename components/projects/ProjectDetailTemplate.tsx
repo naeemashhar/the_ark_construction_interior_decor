@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, MapPin, Calendar, ArrowRight, LayoutGrid } from "lucide-react";
+import { ArrowLeft, MapPin, Calendar, Lightbulb, CheckCircle2 } from "lucide-react";
 
 interface ProjectData {
     id: string;
@@ -30,112 +30,195 @@ export default function ProjectDetailTemplate({ data }: ProjectDetailTemplatePro
         offset: ["start start", "end end"]
     });
 
-    const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-    const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
+    const heroY = useTransform(scrollYProgress, [0, 0.5], ["0%", "20%"]);
+    const heroOpacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
 
     return (
-        <main ref={containerRef} className="bg-zinc-950 min-h-screen text-white overflow-hidden selection:bg-accent selection:text-white">
+        <main ref={containerRef} className="bg-zinc-950 min-h-screen text-white overflow-hidden">
             {/* Back Navigation */}
-            <div className="fixed top-8 left-4 z-50 md:left-12 mix-blend-difference">
-                <Link href="/services" className="group flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-white hover:text-accent transition-colors">
-                    <div className="bg-white/10 p-2 rounded-full group-hover:bg-accent group-hover:text-white transition-all">
+            <div className="fixed top-24 left-8 z-50">
+                <Link
+                    href="/services"
+                    className="group flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-white/70 hover:text-accent transition-all duration-300"
+                >
+                    <div className="bg-white/5 p-2 rounded-full group-hover:bg-accent transition-all duration-300">
                         <ArrowLeft size={16} />
                     </div>
-                    <span className="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300">Back</span>
+                    <span className="hidden md:inline">Back to Services</span>
                 </Link>
             </div>
 
-            {/* Immersive Hero Section */}
-            <section className="relative h-screen w-full flex items-end pb-24 md:pb-32">
-                <motion.div style={{ y, opacity }} className="absolute inset-0 z-0">
+            {/* Hero Section with Parallax */}
+            <section className="relative h-screen w-full flex items-end">
+                <motion.div
+                    style={{ y: heroY, opacity: heroOpacity }}
+                    className="absolute inset-0 z-0"
+                >
                     <Image
                         src={data.image}
                         alt={data.title}
                         fill
                         className="object-cover"
                         priority
+                        sizes="100vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-black/30" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/60 to-transparent" />
                 </motion.div>
 
-                <div className="relative z-10 container px-4 mx-auto">
+                <div className="relative z-10 container px-6 md:px-12 mx-auto pb-24 md:pb-32">
                     <motion.div
-                        initial={{ opacity: 0, y: 50 }}
+                        initial={{ opacity: 0, y: 60 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1, ease: "easeOut" }}
+                        transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
                     >
-                        <div className="flex flex-wrap items-center gap-6 mb-8">
-                            <span className="px-4 py-1 border border-white/20 rounded-full text-xs font-bold uppercase tracking-widest bg-white/5">
+                        {/* Category Badge */}
+                        <div className="inline-flex items-center gap-3 mb-8 px-5 py-2 bg-primary/10 border border-primary/20 rounded-full backdrop-blur-sm">
+                            <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
+                            <span className="text-xs font-bold uppercase tracking-[0.2em] text-accent">
                                 {data.category}
                             </span>
-                            <div className="flex items-center gap-4 text-sm font-medium text-gray-300 uppercase tracking-widest">
-                                <span className="flex items-center gap-2"><MapPin size={14} className="text-accent" /> {data.location}</span>
-                                <span className="w-1 h-1 bg-white/30 rounded-full" />
-                                <span className="flex items-center gap-2"><Calendar size={14} className="text-accent" /> {data.year}</span>
+                        </div>
+
+                        {/* Title */}
+                        <h1 className="text-6xl md:text-8xl lg:text-9xl font-heading font-black tracking-tighter mb-8 leading-[0.9] max-w-5xl">
+                            {data.title}
+                        </h1>
+
+                        {/* Meta Info */}
+                        <div className="flex flex-wrap items-center gap-6 mb-8 text-sm font-medium text-gray-400">
+                            <div className="flex items-center gap-2">
+                                <MapPin size={16} className="text-accent" />
+                                <span>{data.location}</span>
+                            </div>
+                            <div className="w-1 h-1 bg-gray-600 rounded-full" />
+                            <div className="flex items-center gap-2">
+                                <Calendar size={16} className="text-accent" />
+                                <span>{data.year}</span>
                             </div>
                         </div>
 
-                        <h1 className="text-6xl md:text-9xl font-heading font-black tracking-tighter mb-8 leading-[0.85] text-white">
-                            {data.title}
-                        </h1>
-                        <p className="max-w-3xl text-xl md:text-2xl text-gray-300 font-light leading-relaxed border-l-2 border-accent pl-8">
+                        {/* Description */}
+                        <p className="max-w-3xl text-xl md:text-2xl text-gray-300 font-light leading-relaxed">
                             {data.description}
                         </p>
                     </motion.div>
                 </div>
             </section>
 
-            {/* Challenge & Solution Grid */}
-            <section className="py-32 container px-4 mx-auto border-t border-white/5">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
-                    <div className="lg:col-span-4">
-                        <h2 className="text-sm font-bold uppercase tracking-[0.2em] text-accent mb-4">The Brief</h2>
-                        <h3 className="text-4xl font-heading font-bold mb-8">Redefining {data.category} Standards</h3>
-                        <div className="w-20 h-1 bg-white/10" />
-                    </div>
-                    <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-12">
-                        <div>
-                            <h4 className="text-2xl font-bold mb-4 text-white">The Challenge</h4>
-                            <p className="text-gray-400 leading-relaxed text-lg">{data.challenge}</p>
+            {/* Project Overview */}
+            <section className="py-24 md:py-32 bg-zinc-900 border-t border-white/5">
+                <div className="container px-6 md:px-12 mx-auto">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+                        {/* Section Header */}
+                        <div className="lg:col-span-4">
+                            <motion.div
+                                initial={{ opacity: 0, x: -30 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.8 }}
+                            >
+                                <span className="text-accent text-sm font-bold uppercase tracking-[0.3em] mb-4 block">
+                                    Project Overview
+                                </span>
+                                <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">
+                                    Design & <br />Execution
+                                </h2>
+                                <div className="w-20 h-1 bg-accent" />
+                            </motion.div>
                         </div>
-                        <div>
-                            <h4 className="text-2xl font-bold mb-4 text-white">The Solution</h4>
-                            <p className="text-gray-400 leading-relaxed text-lg">{data.solution}</p>
+
+                        {/* Challenge & Solution */}
+                        <div className="lg:col-span-8 space-y-12">
+                            {/* Challenge */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.8 }}
+                                className="group"
+                            >
+                                <div className="flex items-start gap-4 mb-4">
+                                    <div className="p-3 bg-orange-500/10 rounded-lg group-hover:bg-orange-500/20 transition-colors">
+                                        <Lightbulb size={24} className="text-orange-500" />
+                                    </div>
+                                    <div className="flex-1">
+                                        <h3 className="text-2xl font-bold mb-3 text-white">The Challenge</h3>
+                                        <p className="text-gray-400 text-lg leading-relaxed">
+                                            {data.challenge}
+                                        </p>
+                                    </div>
+                                </div>
+                            </motion.div>
+
+                            {/* Solution */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.8, delay: 0.2 }}
+                                className="group"
+                            >
+                                <div className="flex items-start gap-4 mb-4">
+                                    <div className="p-3 bg-green-500/10 rounded-lg group-hover:bg-green-500/20 transition-colors">
+                                        <CheckCircle2 size={24} className="text-green-500" />
+                                    </div>
+                                    <div className="flex-1">
+                                        <h3 className="text-2xl font-bold mb-3 text-white">The Solution</h3>
+                                        <p className="text-gray-400 text-lg leading-relaxed">
+                                            {data.solution}
+                                        </p>
+                                    </div>
+                                </div>
+                            </motion.div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Gallery Section */}
+            {/* Project Gallery */}
             {data.detailsGallery && data.detailsGallery.length > 0 && (
-                <section className="py-24 bg-zinc-900 overflow-hidden">
-                    <div className="container px-4 mx-auto mb-16 flex items-end justify-between">
-                        <div>
-                            <h2 className="text-4xl md:text-6xl font-heading font-bold mb-4">Visual Narrative</h2>
-                            <p className="text-gray-400 max-w-md">Detailed perspectives of the architectural composition.</p>
-                        </div>
-                        <LayoutGrid className="text-accent w-12 h-12 opacity-50 hidden md:block" />
-                    </div>
+                <section className="py-24 md:py-32 bg-zinc-950">
+                    <div className="container px-6 md:px-12 mx-auto">
+                        {/* Section Title */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="mb-16"
+                        >
+                            <h2 className="text-4xl md:text-6xl font-heading font-bold mb-4">
+                                Project Gallery
+                            </h2>
+                            <p className="text-gray-400 text-lg max-w-2xl">
+                                Explore the detailed perspectives and architectural elements that define this project.
+                            </p>
+                        </motion.div>
 
-                    <div className="container px-4 mx-auto">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 auto-rows-[400px] md:auto-rows-[600px]">
-                            {data.detailsGallery.map((img, index) => (
+                        {/* Gallery Grid */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                            {data.detailsGallery.map((imageUrl, index) => (
                                 <motion.div
                                     key={index}
-                                    initial={{ opacity: 0, y: 50 }}
+                                    initial={{ opacity: 0, y: 40 }}
                                     whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true, margin: "-50px" }}
-                                    transition={{ duration: 0.8, delay: index * 0.2 }}
-                                    className={`relative group overflow-hidden rounded-sm ${index === 0 ? "md:col-span-2 md:row-span-1" : "md:col-span-1"
+                                    viewport={{ once: true, margin: "-100px" }}
+                                    transition={{ duration: 0.8, delay: index * 0.15 }}
+                                    className={`relative group overflow-hidden bg-zinc-900 ${index === 0 ? "md:col-span-2 h-[60vh]" : "h-[50vh]"
                                         }`}
                                 >
                                     <Image
-                                        src={img}
-                                        alt={`Detail ${index + 1}`}
+                                        src={imageUrl}
+                                        alt={`${data.title} - Detail ${index + 1}`}
                                         fill
-                                        className="object-cover transition-transform duration-[1.5s] ease-in-out group-hover:scale-105 grayscale-[20%] group-hover:grayscale-0"
+                                        className="object-cover transition-all duration-700 group-hover:scale-105"
+                                        sizes={index === 0 ? "100vw" : "(max-width: 768px) 100vw, 50vw"}
                                     />
-                                    <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                                    {/* Image Number Overlay */}
+                                    <div className="absolute bottom-6 right-6 w-12 h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                        {index + 1}
+                                    </div>
                                 </motion.div>
                             ))}
                         </div>
@@ -143,24 +226,39 @@ export default function ProjectDetailTemplate({ data }: ProjectDetailTemplatePro
                 </section>
             )}
 
-            {/* Next Project CTA */}
-            <section className="h-[50vh] flex items-center justify-center relative group cursor-pointer overflow-hidden border-t-2 border-white/5">
-                <Link href="/services" className="absolute inset-0 z-20" />
-                <div className="absolute inset-0 z-0">
-                    <Image
-                        src={data.image}
-                        alt="Next"
-                        fill
-                        className="object-cover opacity-20 blur-sm scale-110 transition-transform duration-700 group-hover:scale-100 group-hover:blur-0 group-hover:opacity-40"
-                    />
-                    <div className="absolute inset-0 bg-zinc-950/80 group-hover:bg-zinc-950/60 transition-colors duration-500" />
-                </div>
+            {/* CTA Section */}
+            <section className="relative py-32 overflow-hidden">
+                <div className="absolute inset-0 bg-primary" />
+                <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px]" />
 
-                <div className="relative z-10 text-center">
-                    <span className="block text-accent uppercase tracking-widest text-sm font-bold mb-4 opacity-70 group-hover:opacity-100 transition-opacity">Next Steps</span>
-                    <h2 className="text-5xl md:text-8xl font-heading font-black mb-8 group-hover:translate-x-4 transition-transform duration-500 flex items-center justify-center gap-6">
-                        Explore Works <ArrowRight className="w-12 h-12 md:w-20 md:h-20 text-accent" />
-                    </h2>
+                <div className="relative z-10 container px-6 md:px-12 mx-auto text-center">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <h2 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold mb-6 text-white">
+                            Ready to Start Your Project?
+                        </h2>
+                        <p className="text-gray-200 text-lg md:text-xl mb-12 max-w-2xl mx-auto">
+                            Let's collaborate to bring your vision to life with the same precision and excellence.
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                            <Link
+                                href="/contact"
+                                className="inline-block bg-accent hover:bg-accent/90 text-white font-bold tracking-widest uppercase px-10 py-4 text-sm transition-all hover:scale-105 shadow-xl"
+                            >
+                                Start a Project
+                            </Link>
+                            <Link
+                                href="/services"
+                                className="inline-block bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-bold tracking-widest uppercase px-10 py-4 text-sm transition-all border border-white/20"
+                            >
+                                Explore More Work
+                            </Link>
+                        </div>
+                    </motion.div>
                 </div>
             </section>
         </main>

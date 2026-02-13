@@ -60,3 +60,13 @@ body {
   padding-inline: 1rem;
   max-width: 1280px;
 }
+
+/* Force hide default cursor on desktops */
+@media (hover: hover) and (pointer: fine) {
+
+  *,
+  *::before,
+  *::after {
+    cursor: none !important;
+  }
+}
