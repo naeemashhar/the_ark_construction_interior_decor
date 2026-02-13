@@ -17,7 +17,8 @@ export default function Navbar() {
         pathname.startsWith("/services") ||
         pathname === "/contact" ||
         pathname === "/privacy" ||
-        pathname === "/terms";
+        pathname === "/terms" ||
+        pathname.startsWith("/projects");
 
     useEffect(() => {
         const handleScroll = () => {
