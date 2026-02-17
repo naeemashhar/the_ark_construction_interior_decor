@@ -44,7 +44,7 @@ export default function ServiceDetails() {
             </section>
 
             {/* Interior Section */}
-            <section id="interior" className="py-24 md:py-32 bg-white">
+            <section id="interior" className="py-24 md:py-32 bg-canvas">
                 <div className="container px-4">
                     <div className="flex flex-col md:flex-row-reverse gap-16 items-center">
                         <div className="w-full md:w-1/2 space-y-8">
