@@ -51,10 +51,10 @@ export default function ServicesSplit() {
                     <p className="text-secondary mt-4">Merging rigid structure with fluid aesthetics.</p>
                 </div>
 
-                <div className="flex flex-col md:flex-row h-[70vh] w-full items-stretch">
+                <div className="flex flex-col md:flex-row h-auto md:h-[70vh] w-full items-stretch">
 
                     {/* Left: Construction */}
-                    <div ref={leftRef} className="group relative w-full md:w-1/2 overflow-hidden border-b md:border-b-0 md:border-r border-white/20">
+                    <div ref={leftRef} className="group relative w-full md:w-1/2 h-[60vh] md:h-full overflow-hidden border-b md:border-b-0 md:border-r border-white/20">
                         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=1200')] bg-cover bg-center transition-transform duration-700 group-hover:scale-110 grayscale" />
                         <div className="absolute inset-0 bg-primary/80 group-hover:bg-primary/60 transition-colors duration-500" />
 
@@ -68,7 +68,7 @@ export default function ServicesSplit() {
                     </div>
 
                     {/* Right: Interior */}
-                    <div ref={rightRef} className="group relative w-full md:w-1/2 overflow-hidden">
+                    <div ref={rightRef} className="group relative w-full md:w-1/2 h-[60vh] md:h-full overflow-hidden">
                         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=1200')] bg-cover bg-center transition-transform duration-700 group-hover:scale-110 grayscale" />
                         <div className="absolute inset-0 bg-stone-900/80 group-hover:bg-stone-900/60 transition-colors duration-500" />
 

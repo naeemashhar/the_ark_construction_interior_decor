@@ -18,7 +18,7 @@ export default function ContactPage() {
                         <div>
                             <span className="text-accent uppercase tracking-[0.3em] text-xs font-bold block mb-4">Start a Project</span>
                             <h1 className="text-6xl md:text-8xl font-heading font-medium leading-tiny mb-8">
-                                Let's Build <br /> <span className="opacity-50 italic font-serif">History.</span>
+                                Let&apos;s Build <br /> <span className="opacity-50 italic font-serif">History.</span>
                             </h1>
                             <p className="text-xl text-gray-400 font-light max-w-lg leading-relaxed">
                                 We partner with visionaries to create structures that defy expectation. Reach out to discuss your next landmark.

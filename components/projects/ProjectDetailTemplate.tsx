@@ -41,14 +41,33 @@ export default function ProjectDetailTemplate({ data }: ProjectDetailTemplatePro
         <main ref={containerRef} className="bg-zinc-950 min-h-screen text-white overflow-hidden">
             {/* Back Navigation */}
             <div className="fixed top-24 left-8 z-50">
-                <Link
-                    href="/services"
-                    className="group flex items-center gap-3 px-5 py-3 bg-black/40 rounded-full border border-white/10 hover:bg-black/60 transition-all duration-300"
-                >
-                    <div className="bg-white/10 p-1.5 rounded-full group-hover:bg-accent transition-all duration-300">
-                        <ArrowLeft size={16} className="text-white" />
-                    </div>
-                    <span className="hidden md:inline text-white text-xs font-bold uppercase tracking-widest">Back to Services</span>
+                <Link href="/services">
+                    <motion.div
+                        initial="initial"
+                        whileHover="hover"
+                        className="group relative flex items-center gap-3 px-2 py-2 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-colors pointer-events-auto overflow-hidden"
+                        style={{ width: "fit-content" }}
+                    >
+                        <motion.div
+                            variants={{
+                                initial: { scale: 1 },
+                                hover: { scale: 1.1 }
+                            }}
+                            className="w-5 h-5 bg-white text-primary rounded-full flex items-center justify-center shrink-0 z-10"
+                        >
+                            <ArrowLeft size={18} />
+                        </motion.div>
+                        <motion.span
+                            variants={{
+                                initial: { width: 0, opacity: 0, x: -10 },
+                                hover: { width: "auto", opacity: 1, x: 0 }
+                            }}
+                            transition={{ duration: 0.3, ease: "easeOut" }}
+                            className="text-white text-xs font-bold uppercase tracking-widest whitespace-nowrap pr-4"
+                        >
+                            Back to Services
+                        </motion.span>
+                    </motion.div>
                 </Link>
             </div>
 
@@ -76,9 +95,9 @@ export default function ProjectDetailTemplate({ data }: ProjectDetailTemplatePro
                         transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
                     >
                         {/* Category Badge */}
-                        <div className="inline-flex items-center gap-3 mb-8 px-5 py-2 bg-primary/10 border border-primary/20 rounded-full">
-                            <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-                            <span className="text-xs font-bold uppercase tracking-[0.2em] text-accent">
+                        <div className="inline-flex items-center gap-3 mb-8 px-4 py-2 bg-black/40 backdrop-blur-md border border-white/20 rounded-full shadow-lg">
+                            <span className="w-2 h-2 bg-accent rounded-full animate-pulse shadow-[0_0_10px_#E07A5F]" />
+                            <span className="text-xs font-bold uppercase tracking-[0.2em] text-white">
                                 {data.category}
                             </span>
                         </div>

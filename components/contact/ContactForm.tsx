@@ -67,7 +67,7 @@ export default function ContactForm() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            onSubmit={(e) => { e.preventDefault(); console.log(formData); }} // Prevent default submission for now
+            onSubmit={(e) => { e.preventDefault(); }} // Prevent default submission for now
         >
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <motion.div variants={itemVariants} className="group relative">

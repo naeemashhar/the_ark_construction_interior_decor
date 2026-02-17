@@ -127,7 +127,7 @@ export default function InteriorDetail() {
             <section ref={targetRef} className="relative h-[300vh] bg-stone-900 text-white">
                 <div className="sticky top-0 h-screen flex items-center overflow-hidden">
                     <motion.div style={{ x }} className="flex gap-16 px-16">
-                        {data.gallery.map((project, i) => (
+                        {data.gallery.map((project) => (
                             <Link href={`/projects/${project.id}`} key={project.id} className="relative h-[70vh] w-[50vw] md:w-[35vw] shrink-0 block">
                                 <Image
                                     src={project.image}

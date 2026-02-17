@@ -86,7 +86,7 @@ export default function ConstructionDetail() {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {data.gallery.map((project, i) => (
+                        {data.gallery.map((project) => (
                             <Link href={`/projects/${project.id}`} key={project.id} className="block">
                                 <motion.div
                                     initial={{ opacity: 0, scale: 0.9 }}
