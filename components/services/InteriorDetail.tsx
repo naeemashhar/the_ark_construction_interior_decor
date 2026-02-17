@@ -47,7 +47,7 @@ export default function InteriorDetail() {
     const x = useTransform(scrollYProgress, [0, 1], ["1%", "-50%"]);
 
     return (
-        <div className="bg-[#F5F5F0] text-stone-800 selection:bg-stone-300 selection:text-stone-900">
+        <div className="bg-canvas text-stone-800 selection:bg-stone-300 selection:text-stone-900">
 
             {/* Hero - Soft & Elegant */}
             <section className="relative h-screen flex items-center justify-center overflow-hidden">
@@ -88,7 +88,7 @@ export default function InteriorDetail() {
             </section>
 
             {/* Philosophy - Editorial Layout */}
-            <section className="py-32 bg-[#F5F5F0]">
+            <section className="py-32 bg-canvas">
                 <div className="container px-4 grid grid-cols-1 md:grid-cols-2 gap-24 items-start">
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
@@ -152,7 +152,7 @@ export default function InteriorDetail() {
             </section>
 
             {/* Design Process */}
-            <section className="py-32 bg-[#F5F5F0]">
+            <section className="py-32 bg-canvas">
                 <div className="container px-4">
                     <div className="text-center mb-24">
                         <h2 className="text-4xl font-heading font-light">The Creative Process</h2>
@@ -177,7 +177,7 @@ export default function InteriorDetail() {
             </section>
 
             {/* CTA */}
-            <section className="py-32 text-center bg-white">
+            <section className="py-32 text-center bg-canvas">
                 <h2 className="text-5xl md:text-7xl font-serif italic mb-12">Create Your Sanctuary</h2>
                 <Link href="/contact" className="inline-block bg-stone-900 text-white px-12 py-4 rounded-full hover:bg-stone-800 transition-colors uppercase tracking-widest text-xs font-bold">
                     Start Consultation

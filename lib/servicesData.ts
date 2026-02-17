@@ -24,6 +24,9 @@ export const servicesData = {
                 category: "Commercial",
                 location: "New York, NY",
                 year: "2024",
+                client: "Vertex Holdings",
+                status: "Completed",
+                duration: "36 Months",
                 image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800",
                 description: "A 60-story sustainable skyscraper redefining the skyline with its aerodynamic form and green energy systems.",
                 challenge: "Constructing a sway-resistant structure in a high-wind zone while maximizing natural light for all occupants.",
@@ -32,6 +35,11 @@ export const servicesData = {
                     "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800",
                     "https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&q=80&w=800",
                     "https://images.unsplash.com/photo-1460317442991-0ec2aa72af41?auto=format&fit=crop&q=80&w=800"
+                ],
+                sitePhotos: [
+                    "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=400",
+                    "https://images.unsplash.com/photo-1590674899505-1c5c41951f89?auto=format&fit=crop&q=80&w=400",
+                    "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=400"
                 ]
             },
             {
@@ -40,6 +48,9 @@ export const servicesData = {
                 category: "Infrastructure",
                 location: "San Francisco, CA",
                 year: "2023",
+                client: "State Department of Transportation",
+                status: "Completed",
+                duration: "48 Months",
                 image: "https://images.unsplash.com/photo-1591588582259-e675bd2e6088?auto=format&fit=crop&q=80&w=800",
                 description: "A suspension bridge connecting two major districts, designed to withstand seismic activity while offering pedestrian pathways.",
                 challenge: "Minimizing environmental impact on the bay's ecosystem during foundation piling.",
@@ -48,6 +59,11 @@ export const servicesData = {
                     "https://images.unsplash.com/photo-1591588582259-e675bd2e6088?auto=format&fit=crop&q=80&w=800",
                     "https://images.unsplash.com/photo-1545558014-8692077e9b5c?auto=format&fit=crop&q=80&w=800",
                     "https://images.unsplash.com/photo-1513828583688-c29a7f557074?auto=format&fit=crop&q=80&w=800"
+                ],
+                sitePhotos: [
+                    "https://images.unsplash.com/photo-1590674899505-1c5c41951f89?auto=format&fit=crop&q=80&w=400",
+                    "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=400",
+                    "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=400"
                 ]
             },
             {
@@ -56,6 +72,9 @@ export const servicesData = {
                 category: "Public",
                 location: "Oslo, Norway",
                 year: "2025",
+                client: "Ministry of Culture",
+                status: "In Progress",
+                duration: "30 Months",
                 image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=800",
                 description: "A multi-purpose cultural hub featuring theaters, galleries, and public plazas woven into the landscape.",
                 challenge: "Integrating a modern structure into a historic waterfront district without disrupting the visual harmony.",
@@ -64,6 +83,11 @@ export const servicesData = {
                     "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=800",
                     "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=800",
                     "https://images.unsplash.com/photo-1550948537-130a1ce83314?auto=format&fit=crop&q=80&w=800"
+                ],
+                sitePhotos: [
+                    "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=400",
+                    "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=400",
+                    "https://images.unsplash.com/photo-1590674899505-1c5c41951f89?auto=format&fit=crop&q=80&w=400"
                 ]
             }
         ]
@@ -93,6 +117,9 @@ export const servicesData = {
                 category: "Residential",
                 location: "London, UK",
                 year: "2024",
+                client: "Private Client",
+                status: "Completed",
+                duration: "14 Months",
                 image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=800",
                 description: "A dual-level penthouse focusing on minimalism and panoramic city views.",
                 challenge: "Creating a warm, inviting atmosphere within a stark, glass-walled structure.",
@@ -101,6 +128,11 @@ export const servicesData = {
                     "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=800",
                     "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&q=80&w=800",
                     "https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?auto=format&fit=crop&q=80&w=800"
+                ],
+                sitePhotos: [
+                    "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=400",
+                    "https://images.unsplash.com/photo-1590674899505-1c5c41951f89?auto=format&fit=crop&q=80&w=400",
+                    "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=400"
                 ]
             },
             {
@@ -109,6 +141,9 @@ export const servicesData = {
                 category: "Hospitality",
                 location: "Dubai, UAE",
                 year: "2023",
+                client: "Oasis Hospitality Group",
+                status: "Completed",
+                duration: "18 Months",
                 image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=800",
                 description: "A luxury hotel lobby designed to evoke a desert oasis with water features and lush greenery.",
                 challenge: "Managing humidity levels for indoor plants without compromising guest comfort.",
@@ -117,6 +152,11 @@ export const servicesData = {
                     "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=800",
                     "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&q=80&w=800",
                     "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&q=80&w=800"
+                ],
+                sitePhotos: [
+                    "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=400",
+                    "https://images.unsplash.com/photo-1590674899505-1c5c41951f89?auto=format&fit=crop&q=80&w=400",
+                    "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=400"
                 ]
             },
             {
@@ -125,6 +165,9 @@ export const servicesData = {
                 category: "Corporate",
                 location: "Berlin, Germany",
                 year: "2024",
+                client: "Nova Technologies",
+                status: "Completed",
+                duration: "24 Months",
                 image: "https://images.unsplash.com/photo-1616137466211-f939a420be84?auto=format&fit=crop&q=80&w=800",
                 description: "A dynamic workspace for a tech giant, featuring modular breakdown areas and focus pods.",
                 challenge: "Balancing open-plan collaboration with the need for deep focus work.",
@@ -133,6 +176,11 @@ export const servicesData = {
                     "https://images.unsplash.com/photo-1616137466211-f939a420be84?auto=format&fit=crop&q=80&w=800",
                     "https://images.unsplash.com/photo-1497215842964-222b430dc094?auto=format&fit=crop&q=80&w=800",
                     "https://images.unsplash.com/photo-1504384308090-c54be3852f92?auto=format&fit=crop&q=80&w=800"
+                ],
+                sitePhotos: [
+                    "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=400",
+                    "https://images.unsplash.com/photo-1590674899505-1c5c41951f89?auto=format&fit=crop&q=80&w=400",
+                    "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=400"
                 ]
             }
         ]
@@ -160,6 +208,9 @@ export const servicesData = {
                 category: "Residential",
                 location: "Bali, Indonesia",
                 year: "2023",
+                client: "Private Client",
+                status: "Completed",
+                duration: "16 Months",
                 image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=800",
                 description: "A tropical retreat blending indoor and outdoor living with an open-air pavilion design.",
                 challenge: "Protecting the structure from tropical monsoons while maintaining an open feel.",
@@ -168,6 +219,11 @@ export const servicesData = {
                     "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=800",
                     "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&q=80&w=800",
                     "https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&q=80&w=800"
+                ],
+                sitePhotos: [
+                    "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=400",
+                    "https://images.unsplash.com/photo-1590674899505-1c5c41951f89?auto=format&fit=crop&q=80&w=400",
+                    "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=400"
                 ]
             },
             {
@@ -176,6 +232,9 @@ export const servicesData = {
                 category: "Residential",
                 location: "Aspen, CO",
                 year: "2024",
+                client: "Private Client",
+                status: "Key Handover",
+                duration: "20 Months",
                 image: "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&q=80&w=800",
                 description: "A modern ski chalet using stone and timber to reflect the rugged mountain landscape.",
                 challenge: "Ensuring energy efficiency in extreme winter conditions.",
@@ -184,6 +243,11 @@ export const servicesData = {
                     "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&q=80&w=800",
                     "https://images.unsplash.com/photo-1542332213-31f87348057f?auto=format&fit=crop&q=80&w=800",
                     "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&q=80&w=800"
+                ],
+                sitePhotos: [
+                    "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=400",
+                    "https://images.unsplash.com/photo-1590674899505-1c5c41951f89?auto=format&fit=crop&q=80&w=400",
+                    "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=400"
                 ]
             },
             {
@@ -192,6 +256,9 @@ export const servicesData = {
                 category: "Residential",
                 location: "New York, NY",
                 year: "2022",
+                client: "Loft Conversions NYC",
+                status: "Completed",
+                duration: "12 Months",
                 image: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&q=80&w=800",
                 description: "Converting a historic warehouse into a chic, industrial-style family home.",
                 challenge: "Preserving original brickwork while updating insulation and electrical systems.",
@@ -200,6 +267,11 @@ export const servicesData = {
                     "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&q=80&w=800",
                     "https://images.unsplash.com/photo-1600566752355-35792bedcfe1?auto=format&fit=crop&q=80&w=800",
                     "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?auto=format&fit=crop&q=80&w=800"
+                ],
+                sitePhotos: [
+                    "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=400",
+                    "https://images.unsplash.com/photo-1590674899505-1c5c41951f89?auto=format&fit=crop&q=80&w=400",
+                    "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=400"
                 ]
             }
         ]
@@ -227,6 +299,9 @@ export const servicesData = {
                 category: "Commercial",
                 location: "Singapore",
                 year: "2024",
+                client: "Global Finance Corp",
+                status: "Completed",
+                duration: "32 Months",
                 image: "https://images.unsplash.com/photo-1577412647305-991150c7d163?auto=format&fit=crop&q=80&w=800",
                 description: "A state-of-the-art trading floor and office complex designed for high-frequency workflows.",
                 challenge: "Accommodating massive data infrastructure without compromising aesthetic appeal.",
@@ -235,6 +310,11 @@ export const servicesData = {
                     "https://images.unsplash.com/photo-1577412647305-991150c7d163?auto=format&fit=crop&q=80&w=800",
                     "https://images.unsplash.com/photo-1504384308090-c54be3852f92?auto=format&fit=crop&q=80&w=800",
                     "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=800"
+                ],
+                sitePhotos: [
+                    "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=400",
+                    "https://images.unsplash.com/photo-1590674899505-1c5c41951f89?auto=format&fit=crop&q=80&w=400",
+                    "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=400"
                 ]
             },
             {
@@ -243,6 +323,9 @@ export const servicesData = {
                 category: "Commercial",
                 location: "Austin, TX",
                 year: "2023",
+                client: "TechStream Ventures",
+                status: "Phase 1 Complete",
+                duration: "Ongoing",
                 image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800",
                 description: "A campus-style environment fostering creativity with outdoor meeting spaces and walking trails.",
                 challenge: "Creating a cohesive feel across multiple distinct buildings.",
@@ -251,6 +334,11 @@ export const servicesData = {
                     "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800",
                     "https://images.unsplash.com/photo-1497215842964-222b430dc094?auto=format&fit=crop&q=80&w=800",
                     "https://images.unsplash.com/photo-1577412647305-991150c7d163?auto=format&fit=crop&q=80&w=800"
+                ],
+                sitePhotos: [
+                    "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=400",
+                    "https://images.unsplash.com/photo-1590674899505-1c5c41951f89?auto=format&fit=crop&q=80&w=400",
+                    "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=400"
                 ]
             },
             {
@@ -259,6 +347,9 @@ export const servicesData = {
                 category: "Commercial",
                 location: "London, UK",
                 year: "2022",
+                client: "Artisan Collective",
+                status: "Completed",
+                duration: "10 Months",
                 image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=800",
                 description: "A co-working space for artists and designers, featuring abundant natural light.",
                 challenge: "Providing flexible spaces that can adapt to different team sizes.",
@@ -267,6 +358,11 @@ export const servicesData = {
                     "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=800",
                     "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=800",
                     "https://images.unsplash.com/photo-1504384308090-c54be3852f92?auto=format&fit=crop&q=80&w=800"
+                ],
+                sitePhotos: [
+                    "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=400",
+                    "https://images.unsplash.com/photo-1590674899505-1c5c41951f89?auto=format&fit=crop&q=80&w=400",
+                    "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=400"
                 ]
             }
         ]
@@ -294,6 +390,9 @@ export const servicesData = {
                 category: "Industrial",
                 location: "Hamburg, Germany",
                 year: "2024",
+                client: "Prime Logistics Group",
+                status: "Completed",
+                duration: "22 Months",
                 image: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&q=80&w=800",
                 description: "An automated distribution center processing over 1 million packages daily.",
                 challenge: "Designing a floor slab to support heavy robotic automation equipment.",
@@ -302,6 +401,11 @@ export const servicesData = {
                     "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&q=80&w=800",
                     "https://images.unsplash.com/photo-1565514020176-db937be70478?auto=format&fit=crop&q=80&w=800",
                     "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800"
+                ],
+                sitePhotos: [
+                    "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=400",
+                    "https://images.unsplash.com/photo-1590674899505-1c5c41951f89?auto=format&fit=crop&q=80&w=400",
+                    "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=400"
                 ]
             },
             {
@@ -310,6 +414,9 @@ export const servicesData = {
                 category: "Industrial",
                 location: "Seattle, WA",
                 year: "2023",
+                client: "AeroTech Components",
+                status: "Operational",
+                duration: "28 Months",
                 image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aW5kdXN0cmlhbHxlbnwwfHwwfHx8MA%3D%3D",
                 description: "A precision manufacturing plant for aerospace components.",
                 challenge: "Maintaing strict dust and temperature control in a massive volume space.",
@@ -318,6 +425,11 @@ export const servicesData = {
                     "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aW5kdXN0cmlhbHxlbnwwfHwwfHx8MA%3D%3D",
                     "https://images.unsplash.com/photo-1565514020176-db937be70478?auto=format&fit=crop&q=80&w=800",
                     "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800"
+                ],
+                sitePhotos: [
+                    "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=400",
+                    "https://images.unsplash.com/photo-1590674899505-1c5c41951f89?auto=format&fit=crop&q=80&w=400",
+                    "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=400"
                 ]
             },
             {
@@ -326,6 +438,9 @@ export const servicesData = {
                 category: "Industrial",
                 location: "Nevada, NV",
                 year: "2022",
+                client: "EcoPowerGen",
+                status: "Active",
+                duration: "36 Months",
                 image: "https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&q=80&w=800",
                 description: "A solar power processing facility geared towards sustainable energy production.",
                 challenge: "Protecting sensitive equipment from desert sand and heat.",
@@ -334,6 +449,11 @@ export const servicesData = {
                     "https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&q=80&w=800",
                     "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&q=80&w=800",
                     "https://images.unsplash.com/photo-1565514020176-db937be70478?auto=format&fit=crop&q=80&w=800"
+                ],
+                sitePhotos: [
+                    "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=400",
+                    "https://images.unsplash.com/photo-1590674899505-1c5c41951f89?auto=format&fit=crop&q=80&w=400",
+                    "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=400"
                 ]
             }
         ]
@@ -361,6 +481,9 @@ export const servicesData = {
                 category: "Infrastructure",
                 location: "Paris, France",
                 year: "2024",
+                client: "City Transport Authority",
+                status: "Phase 2 Ongoing",
+                duration: "60 Months",
                 image: "https://images.unsplash.com/photo-1527335988388-b40ee248d80c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aW5mcmFzdHJ1Y3R1cmV8ZW58MHx8MHx8fDA%3D",
                 description: "An expansion of the metro line including three new underground stations.",
                 challenge: "Excavating beneath historic buildings without causing subsidence.",
@@ -369,6 +492,11 @@ export const servicesData = {
                     "https://images.unsplash.com/photo-1527335988388-b40ee248d80c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aW5mcmFzdHJ1Y3R1cmV8ZW58MHx8MHx8fDA%3D",
                     "https://images.unsplash.com/photo-1590674899505-1c5c41951f89?auto=format&fit=crop&q=80&w=800",
                     "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=800"
+                ],
+                sitePhotos: [
+                    "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=400",
+                    "https://images.unsplash.com/photo-1590674899505-1c5c41951f89?auto=format&fit=crop&q=80&w=400",
+                    "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=400"
                 ]
             },
             {
@@ -377,6 +505,9 @@ export const servicesData = {
                 category: "Public",
                 location: "Chicago, IL",
                 year: "2023",
+                client: "City Parks Dept",
+                status: "Renovation Complete",
+                duration: "24 Months",
                 image: "https://images.unsplash.com/photo-1536408525595-8a6c1d3d71ea?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGluZnJhc3RydWN0dXJlfGVufDB8fDB8fHww",
                 description: "Revitalizing the river bank into a vibrant public park and walking trail.",
                 challenge: "Managing flood risks while keeping the river accessible to pedestrians.",
@@ -385,6 +516,11 @@ export const servicesData = {
                     "https://images.unsplash.com/photo-1536408525595-8a6c1d3d71ea?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGluZnJhc3RydWN0dXJlfGVufDB8fDB8fHww",
                     "https://images.unsplash.com/photo-1513828583688-c29a7f557074?auto=format&fit=crop&q=80&w=800",
                     "https://images.unsplash.com/photo-1550948537-130a1ce83314?auto=format&fit=crop&q=80&w=800"
+                ],
+                sitePhotos: [
+                    "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=400",
+                    "https://images.unsplash.com/photo-1590674899505-1c5c41951f89?auto=format&fit=crop&q=80&w=400",
+                    "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=400"
                 ]
             },
             {
@@ -393,6 +529,9 @@ export const servicesData = {
                 category: "Energy",
                 location: "North Sea",
                 year: "2022",
+                client: "EcoEnergy EU",
+                status: "Operational",
+                duration: "6 Years",
                 image: "https://images.unsplash.com/photo-1721595279388-085728677a50?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGluZnJhc3RydWN0dXJlfGVufDB8fDB8fHww",
                 description: "A massive renewable energy project powering over 500,000 homes.",
                 challenge: "Installing turbines in deep, rough waters.",
@@ -401,6 +540,11 @@ export const servicesData = {
                     "https://images.unsplash.com/photo-1721595279388-085728677a50?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGluZnJhc3RydWN0dXJlfGVufDB8fDB8fHww",
                     "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=800",
                     "https://images.unsplash.com/photo-1460317442991-0ec2aa72af41?auto=format&fit=crop&q=80&w=800"
+                ],
+                sitePhotos: [
+                    "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=400",
+                    "https://images.unsplash.com/photo-1590674899505-1c5c41951f89?auto=format&fit=crop&q=80&w=400",
+                    "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=400"
                 ]
             }
         ]

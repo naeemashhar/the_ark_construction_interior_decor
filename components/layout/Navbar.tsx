@@ -44,7 +44,7 @@ export default function Navbar() {
         if (scrolled) {
             return isDarkPage
                 ? "py-4 bg-[#3D405B]/90  border-b border-white/10 shadow-lg"
-                : "py-4 bg-white/90  border-b border-gray-200 shadow-sm";
+                : "py-4 bg-canvas/90  border-b border-gray-200 shadow-sm";
         }
         // Gradient overlay for better text visibility on hero images
         return isDarkPage

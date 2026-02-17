@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, MapPin, Calendar, Lightbulb, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, Lightbulb, CheckCircle2 } from "lucide-react";
 
 interface ProjectData {
     id: string;
@@ -17,6 +17,10 @@ interface ProjectData {
     challenge: string;
     solution: string;
     detailsGallery?: string[];
+    client?: string;
+    status?: string;
+    duration?: string;
+    sitePhotos?: string[];
 }
 
 interface ProjectDetailTemplateProps {
@@ -39,12 +43,12 @@ export default function ProjectDetailTemplate({ data }: ProjectDetailTemplatePro
             <div className="fixed top-24 left-8 z-50">
                 <Link
                     href="/services"
-                    className="group flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-white/70 hover:text-accent transition-all duration-300"
+                    className="group flex items-center gap-3 px-5 py-3 bg-black/40 rounded-full border border-white/10 hover:bg-black/60 transition-all duration-300"
                 >
-                    <div className="bg-white/5 p-2 rounded-full group-hover:bg-accent transition-all duration-300">
-                        <ArrowLeft size={16} />
+                    <div className="bg-white/10 p-1.5 rounded-full group-hover:bg-accent transition-all duration-300">
+                        <ArrowLeft size={16} className="text-white" />
                     </div>
-                    <span className="hidden md:inline">Back to Services</span>
+                    <span className="hidden md:inline text-white text-xs font-bold uppercase tracking-widest">Back to Services</span>
                 </Link>
             </div>
 
@@ -72,7 +76,7 @@ export default function ProjectDetailTemplate({ data }: ProjectDetailTemplatePro
                         transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
                     >
                         {/* Category Badge */}
-                        <div className="inline-flex items-center gap-3 mb-8 px-5 py-2 bg-primary/10 border border-primary/20 rounded-full backdrop-blur-sm">
+                        <div className="inline-flex items-center gap-3 mb-8 px-5 py-2 bg-primary/10 border border-primary/20 rounded-full">
                             <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
                             <span className="text-xs font-bold uppercase tracking-[0.2em] text-accent">
                                 {data.category}
@@ -84,23 +88,30 @@ export default function ProjectDetailTemplate({ data }: ProjectDetailTemplatePro
                             {data.title}
                         </h1>
 
-                        {/* Meta Info */}
-                        <div className="flex flex-wrap items-center gap-6 mb-8 text-sm font-medium text-gray-400">
-                            <div className="flex items-center gap-2">
-                                <MapPin size={16} className="text-accent" />
-                                <span>{data.location}</span>
-                            </div>
-                            <div className="w-1 h-1 bg-gray-600 rounded-full" />
-                            <div className="flex items-center gap-2">
-                                <Calendar size={16} className="text-accent" />
-                                <span>{data.year}</span>
-                            </div>
-                        </div>
-
                         {/* Description */}
-                        <p className="max-w-3xl text-xl md:text-2xl text-gray-300 font-light leading-relaxed">
+                        <p className="max-w-3xl text-xl md:text-2xl text-gray-300 font-light leading-relaxed mb-12">
                             {data.description}
                         </p>
+
+                        {/* Specifications Grid */}
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 py-8 border-t border-white/10">
+                            <div>
+                                <h3 className="text-gray-500 text-xs font-bold uppercase tracking-widest mb-2">Location</h3>
+                                <p className="text-lg md:text-xl font-medium">{data.location}</p>
+                            </div>
+                            <div>
+                                <h3 className="text-gray-500 text-xs font-bold uppercase tracking-widest mb-2">Client</h3>
+                                <p className="text-lg md:text-xl font-medium">{data.client || "Confidential"}</p>
+                            </div>
+                            <div>
+                                <h3 className="text-gray-500 text-xs font-bold uppercase tracking-widest mb-2">Duration</h3>
+                                <p className="text-lg md:text-xl font-medium">{data.duration || "Ongoing"}</p>
+                            </div>
+                            <div>
+                                <h3 className="text-gray-500 text-xs font-bold uppercase tracking-widest mb-2">Status</h3>
+                                <p className="text-lg md:text-xl font-medium text-accent">{data.status || "Completed"}</p>
+                            </div>
+                        </div>
                     </motion.div>
                 </div>
             </section>
@@ -116,34 +127,38 @@ export default function ProjectDetailTemplate({ data }: ProjectDetailTemplatePro
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.8 }}
+                                className="sticky top-32"
                             >
                                 <span className="text-accent text-sm font-bold uppercase tracking-[0.3em] mb-4 block">
-                                    Project Overview
+                                    Project Brief
                                 </span>
                                 <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">
-                                    Design & <br />Execution
+                                    The <br />Challenge
                                 </h2>
-                                <div className="w-20 h-1 bg-accent" />
+                                <div className="w-20 h-1 bg-accent mb-8" />
+                                <p className="text-gray-400 text-lg leading-relaxed">
+                                    Every project presents a unique set of constraints and opportunities. Here is how we navigated them.
+                                </p>
                             </motion.div>
                         </div>
 
                         {/* Challenge & Solution */}
-                        <div className="lg:col-span-8 space-y-12">
+                        <div className="lg:col-span-8 space-y-16">
                             {/* Challenge */}
                             <motion.div
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.8 }}
-                                className="group"
+                                className="group bg-black/20 p-8 md:p-12 rounded-2xl border border-white/5"
                             >
-                                <div className="flex items-start gap-4 mb-4">
-                                    <div className="p-3 bg-orange-500/10 rounded-lg group-hover:bg-orange-500/20 transition-colors">
-                                        <Lightbulb size={24} className="text-orange-500" />
+                                <div className="flex items-start gap-6">
+                                    <div className="p-4 bg-orange-500/10 rounded-xl group-hover:bg-orange-500/20 transition-colors">
+                                        <Lightbulb size={32} className="text-orange-500" />
                                     </div>
                                     <div className="flex-1">
-                                        <h3 className="text-2xl font-bold mb-3 text-white">The Challenge</h3>
-                                        <p className="text-gray-400 text-lg leading-relaxed">
+                                        <h3 className="text-2xl font-bold mb-4 text-white">The Challenge</h3>
+                                        <p className="text-gray-300 text-lg leading-relaxed">
                                             {data.challenge}
                                         </p>
                                     </div>
@@ -156,15 +171,15 @@ export default function ProjectDetailTemplate({ data }: ProjectDetailTemplatePro
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.8, delay: 0.2 }}
-                                className="group"
+                                className="group bg-black/20 p-8 md:p-12 rounded-2xl border border-white/5"
                             >
-                                <div className="flex items-start gap-4 mb-4">
-                                    <div className="p-3 bg-green-500/10 rounded-lg group-hover:bg-green-500/20 transition-colors">
-                                        <CheckCircle2 size={24} className="text-green-500" />
+                                <div className="flex items-start gap-6">
+                                    <div className="p-4 bg-green-500/10 rounded-xl group-hover:bg-green-500/20 transition-colors">
+                                        <CheckCircle2 size={32} className="text-green-500" />
                                     </div>
                                     <div className="flex-1">
-                                        <h3 className="text-2xl font-bold mb-3 text-white">The Solution</h3>
-                                        <p className="text-gray-400 text-lg leading-relaxed">
+                                        <h3 className="text-2xl font-bold mb-4 text-white">The Solution</h3>
+                                        <p className="text-gray-300 text-lg leading-relaxed">
                                             {data.solution}
                                         </p>
                                     </div>
@@ -175,21 +190,56 @@ export default function ProjectDetailTemplate({ data }: ProjectDetailTemplatePro
                 </div>
             </section>
 
+            {/* Site Progress Gallery (New Section) */}
+            {data.sitePhotos && data.sitePhotos.length > 0 && (
+                <section className="py-24 bg-zinc-950 border-t border-white/5">
+                    <div className="container px-6 md:px-12 mx-auto">
+                        <div className="mb-12 flex items-end justify-between">
+                            <div>
+                                <span className="text-accent text-sm font-bold uppercase tracking-[0.3em] mb-2 block">
+                                    On Site
+                                </span>
+                                <h2 className="text-3xl md:text-4xl font-heading font-bold">
+                                    Construction Progress
+                                </h2>
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            {data.sitePhotos.map((photo, i) => (
+                                <div key={i} className="relative aspect-[4/3] group overflow-hidden bg-zinc-900 rounded-lg">
+                                    <Image
+                                        src={photo}
+                                        alt="Site Progress"
+                                        fill
+                                        className="object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                                    />
+                                    <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            )}
+
             {/* Project Gallery */}
             {data.detailsGallery && data.detailsGallery.length > 0 && (
-                <section className="py-24 md:py-32 bg-zinc-950">
+                <section className="py-24 md:py-32 bg-zinc-900">
                     <div className="container px-6 md:px-12 mx-auto">
                         {/* Section Title */}
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="mb-16"
+                            className="mb-16 text-center max-w-3xl mx-auto"
                         >
-                            <h2 className="text-4xl md:text-6xl font-heading font-bold mb-4">
-                                Project Gallery
+                            <span className="text-accent text-sm font-bold uppercase tracking-[0.3em] mb-4 block">
+                                Visual Narrative
+                            </span>
+                            <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6">
+                                Finished Masterpiece
                             </h2>
-                            <p className="text-gray-400 text-lg max-w-2xl">
+                            <p className="text-gray-400 text-lg">
                                 Explore the detailed perspectives and architectural elements that define this project.
                             </p>
                         </motion.div>
@@ -203,7 +253,7 @@ export default function ProjectDetailTemplate({ data }: ProjectDetailTemplatePro
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true, margin: "-100px" }}
                                     transition={{ duration: 0.8, delay: index * 0.15 }}
-                                    className={`relative group overflow-hidden bg-zinc-900 ${index === 0 ? "md:col-span-2 h-[60vh]" : "h-[50vh]"
+                                    className={`relative group overflow-hidden bg-zinc-900 rounded-xl ${index === 0 ? "md:col-span-2 h-[60vh]" : "h-[50vh]"
                                         }`}
                                 >
                                     <Image
@@ -216,7 +266,7 @@ export default function ProjectDetailTemplate({ data }: ProjectDetailTemplatePro
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                                     {/* Image Number Overlay */}
-                                    <div className="absolute bottom-6 right-6 w-12 h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                    <div className="absolute bottom-6 right-6 w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-white font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-y-4 group-hover:translate-y-0">
                                         {index + 1}
                                     </div>
                                 </motion.div>
@@ -242,7 +292,7 @@ export default function ProjectDetailTemplate({ data }: ProjectDetailTemplatePro
                             Ready to Start Your Project?
                         </h2>
                         <p className="text-gray-200 text-lg md:text-xl mb-12 max-w-2xl mx-auto">
-                            Let's collaborate to bring your vision to life with the same precision and excellence.
+                            Let&apos;s collaborate to bring your vision to life with the same precision and excellence.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <Link
@@ -253,7 +303,7 @@ export default function ProjectDetailTemplate({ data }: ProjectDetailTemplatePro
                             </Link>
                             <Link
                                 href="/services"
-                                className="inline-block bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-bold tracking-widest uppercase px-10 py-4 text-sm transition-all border border-white/20"
+                                className="inline-block bg-white/10 hover:bg-white/20 text-white font-bold tracking-widest uppercase px-10 py-4 text-sm transition-all border border-white/20"
                             >
                                 Explore More Work
                             </Link>

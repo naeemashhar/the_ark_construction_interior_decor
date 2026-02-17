@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import MagneticButton from "@/components/ui/MagneticButton";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -83,8 +84,12 @@ export default function HeroSection() {
                 </div>
 
                 <div className="flex justify-center gap-6">
-                    <MagneticButton variant="primary">View Projects</MagneticButton>
-                    <MagneticButton variant="outline" className="text-white">Contact Us</MagneticButton>
+                    <Link href="/projects">
+                        <MagneticButton variant="primary">View Projects</MagneticButton>
+                    </Link>
+                    <Link href="/contact">
+                        <MagneticButton variant="outline" className="text-white">Contact Us</MagneticButton>
+                    </Link>
                 </div>
             </div>
         </section>
