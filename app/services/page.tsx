@@ -4,7 +4,12 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "Services | The Ark Design Studio",
-    description: "Explore our expertise in Construction, Engineering, and Interior Design.",
+    description: "Explore our expertise in Construction, Engineering, and Interior Design. From structural brutalism to refined interiors.",
+    openGraph: {
+        title: "Services | The Ark Design Studio",
+        description: "Explore our expertise in Construction, Engineering, and Interior Design.",
+        images: ["https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=1200"],
+    },
 };
 
 export default function ServicesPage() {
