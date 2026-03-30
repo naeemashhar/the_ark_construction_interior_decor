@@ -95,7 +95,7 @@ export default function ProjectDetailTemplate({ data }: ProjectDetailTemplatePro
                         transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
                     >
                         {/* Category Badge */}
-                        <div className="inline-flex items-center gap-3 mb-8 px-4 py-2 bg-black/40 backdrop-blur-md border border-white/20 rounded-full shadow-lg">
+                        <div className="inline-flex items-center gap-3 mb-8 px-4 py-2 bg-black/40 border border-white/20 rounded-full shadow-lg">
                             <span className="w-2 h-2 bg-accent rounded-full animate-pulse shadow-[0_0_10px_#E07A5F]" />
                             <span className="text-xs font-bold uppercase tracking-[0.2em] text-white">
                                 {data.category}
