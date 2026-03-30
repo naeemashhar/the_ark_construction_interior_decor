@@ -23,7 +23,7 @@ export default function MapComponent() {
                                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-accent/30 rounded-full animate-ping" />
                                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-accent/10 rounded-full animate-pulse duration-[3000ms]" />
                                 </div> */}
-                                <div className="mt-4 bg-zinc-900/95 px-5 py-2.5 rounded-xl border border-white/10 text-center shadow-2xl backdrop-blur-md">
+                                <div className="mt-4 bg-zinc-900/95 px-5 py-2.5 rounded-xl border border-white/10 text-center shadow-2xl">
                                     <p className="text-white font-heading font-extrabold tracking-wider text-xs uppercase">MALEGAON</p>
                                     <p className="text-accent text-[10px] font-mono mt-0.5 opacity-80">20.55, 74.53</p>
                                 </div>
